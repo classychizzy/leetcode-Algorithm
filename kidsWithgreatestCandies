@@ -1,0 +1,45 @@
+# 1431. Kids With the Greatest Number of Candies
+## algorithm type: greedy Algorithm
+## Hint
+<p> There are n kids with candies. You are given an integer array candies, where each candies[i] represents the number of candies the ith kid has, and an integer extraCandies, denoting the number of extra candies that you have.
+</p>
+<p> Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies, they will have the greatest number of candies among all the kids, or false otherwise.
+
+Note that multiple kids can have the greatest number of candies.</p>
+
+<code>
+
+unction kidsWithCandies(candies: number[], extraCandies: number) {
+// n kids have candies
+// candies []; candies[i]
+// set max candy which is cost to zero and compare with the amount
+// of candy with each child
+function maxCandy (candies: number[]) {
+    let value : number = 0;
+
+for (let i = 0; i < candies.length; i++){
+    if (candies[i] > value) {
+        // swap values
+        value = candies[i]
+    }
+    
+}
+return value
+}
+
+
+let result = [];
+const heighest = maxCandy(candies);
+
+for (let j = 0; j < candies.length; j++) {
+     if (candies[j] + extraCandies >= heighest) {
+         result.push(true)
+     }
+     else {
+         result.push(false)
+     }
+}
+return result;
+
+
+};
